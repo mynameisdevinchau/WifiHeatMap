@@ -6,11 +6,29 @@ import matplotlib.image as mpimg
 
 image = cv2.imread("C:/Users/Devin Chau/Desktop/sjsumaptemporary.png")
 
+#creating the grid overlay
+#this will just be temporary but this should give us an idea on what to do 
 image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-plt.imshow(image_rgb)
-plt.show()
+dx = 100  
+dy = 100  
+grid_color = [0, 0, 0]  
+highlight_color = [1, 0, 0] 
 
+image[:, ::dy, :] = grid_color
+image[::dx, :, :] = grid_color
+
+highlight_cell_row = 2  
+highlight_cell_col = 3 
+
+start_row = highlight_cell_row * dx
+end_row = (highlight_cell_row + 1) * dx
+start_col = highlight_cell_col * dy
+end_col = (highlight_cell_col + 1) * dy
+
+image[start_row:end_row, start_col:end_col, :] = highlight_color
+
+#this creates the heatmap 
 lab = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
 
 a_component = lab[:, :, 1]

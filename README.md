@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-chat are we cooked?
+i am not too sure on how to do it but there is basically a general outline on what to do. we still need to find a way to update the value since right now, our code is just for one instance. we can figure it out as we go along but we ain't even close to finished...
 =======
 hello world!!!!
 changed by ethan
